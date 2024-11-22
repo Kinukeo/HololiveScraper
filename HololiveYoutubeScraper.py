@@ -1,13 +1,16 @@
 import requests
 from bs4 import BeautifulSoup
 
-from UrlList import get_urls
+import UrlList
 
-urls = [get_urls()[1]]
-for url in urls:
-    response = requests.get(url)
-    if "Tap to watch live" in response.text:
-        print("Is live")
-    else:
-        print("Not live")
+talent_to_url = UrlList.get_talents()
 
+def is_live():
+    for i in talent_to_url:
+        response = requests.get(i['Url'])
+        if "Tap to watch live" in response.text:
+            print(i['Name'] + " Is live")
+
+# for url in talent_to_url:
+#     print(url['Url'])
+is_live()
