@@ -4,6 +4,4 @@ A python app that scrapes YouTube urls and updates the talent's live status. Thi
 
 ## Tech Stack
 
-Python
-Sanic.py
-Python CSV Module
+Python, Sanic.py, Python CSV Module
